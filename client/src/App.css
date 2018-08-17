@@ -30,6 +30,7 @@
   .progressBar {
     width: 100%;
     left: 0;
+    bottom: 15px;
   }
   .progressTitle {
     margin-left: 40%;
