@@ -9,7 +9,7 @@ If you use yarn:
 ```
 yarn
 yarn start
-cd react-backend 
+cd client
 yarn start
 
 ```
@@ -17,7 +17,7 @@ If you use npm:
 ```
 npm install
 npm start
-cd react-backend 
+cd client 
 npm start
 
 ```
