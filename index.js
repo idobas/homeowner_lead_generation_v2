@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const generatePassword = require('password-generator');
 const fetch = require('node-fetch');
 
 const app = express();

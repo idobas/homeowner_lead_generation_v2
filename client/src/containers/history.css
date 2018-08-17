@@ -1,0 +1,3 @@
+.historyList { width:320px; }
+.historyList ol { font-style:italic; font-family:Georgia, Times, serif; font-size:24px; color:#bfe1f1;  }
+.historyList ol li { padding:8px; font-style:normal; font-family:Arial; font-size:13px; color:#778899	; border-left: 1px solid #999; }
