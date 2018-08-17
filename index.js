@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const fetch = require('node-fetch');
+const parser = require('xml-js');
+const _ = require('lodash');
 
 const app = express();
 
@@ -12,12 +14,26 @@ app.get('/api/zestimate', (req, res) => {
     let {API_KEY, address, cityStateZip} = req.query;
     address = encodeURI(address);
     cityStateZip = encodeURI(cityStateZip);
-    const url = `http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=${API_KEY}&address=${address}&citystatezip=${cityStateZip}`;
-    console.log(url);
+    const url = `http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=${API_KEY}&address=${address}&citystatezip=${cityStateZip}&rentzestimate=true`;
     fetch(url)
         .then(result => result.text())
         .then(result => {
-            res.send(result.split('<amount currency="USD">')[1].split('</amount>')[0]);
+            result = parser.xml2js(result, {compact: true, spaces: 4})['SearchResults:searchresults'];
+            const valuationRange = _.get(result, 'response.results.result.rentzestimate.valuationRange');
+            let zestimate = _.get(result, 'response.results.result.zestimate.amount._text');
+            if (valuationRange) {
+                // There is a rent zestimate
+                let {low, high} = valuationRange;
+                low = low._text;
+                high = high._text;
+                res.send(`${low} - ${high}`);
+            } else if (zestimate) {
+                // There is no rent zestimate so return the regular zestimate
+                zestimate = (parseInt(zestimate) * 0.05) / 12;
+                res.send(`${Math.floor(zestimate * 0.9)} - ${Math.floor(zestimate * 1.1)}`);
+            } else {
+                res.send('Sorry, could not calculate zestimate for this address :)')
+            }
         })
         .catch(error => res.send('Sorry, could not calculate zestimate for this address :)'));
 });

@@ -6,11 +6,10 @@ import ZestimateScreen from './containers/zestimation_screen';
 import History from './containers/history';
 import { BrowserRouter } from 'react-router-dom';
 import ProgressBar from './containers/progress_bar';
-import {connect} from 'react-redux';
 import './App.css';
 
 
-class App extends Component {
+export default class App extends Component {
   render() {
     const username = localStorage.getItem('username');
     return (
@@ -33,17 +32,11 @@ class App extends Component {
                 <History/>
               </div>
             </div>
-            <ProgressBar/>
+            <div className='progress_bar'>
+              <ProgressBar/>
+            </div>
           </div>
         </BrowserRouter>
     )
   }
 };
-
-function mapStateToProps(state) {
-  return {
-    username: state.userInfo.firstName
-  }
-}
-
-export default connect(mapStateToProps)(App);

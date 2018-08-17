@@ -13,7 +13,7 @@ class ZestimationScreen extends Component {
             <div className='zestimate'>
                 <h4>Here is your zestimate for the address:</h4>
                 <h3>{address}</h3>
-                <h2 className={zestimate === errorMessage ? 'errorMessage' : 'money'}>{`${zestimate}${zestimate === errorMessage ? '' : '$'}`}</h2>
+                <h2 className={zestimate === errorMessage ? 'errorMessage' : 'money'}>{`${zestimate} ${zestimate === errorMessage ? '' : '$'}`}</h2>
                 <Link to='/address' className='back'>
                     <Button variant="contained" color="secondary" type="submit">Back</Button>
                 </Link>

@@ -10,8 +10,8 @@ import {withRouter} from 'react-router-dom';
 
 class AddressScreenForm extends Component {
     dispatchSubmit() {
-        const { dispatch, address, getZestimate, history } = this.props;
-        dispatch(getZestimate(address));
+        const { address, getZestimate, history } = this.props;
+        getZestimate(address);
         history.push('/zestimate');
     }
 

@@ -15,17 +15,27 @@
   to { transform: rotate(360deg); }
 }
 
-@media(min-width: 479px) {
+@media(min-width: 768px) {
   .main_content {
     display: flex;
     justify-content: space-between;
   }
 }
 
-@media(max-width: 479px) {
+@media(max-width: 768px) {
   .history {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 100px;
+  }
+  .progressBar {
+    width: 100%;
+    left: 0;
+  }
+  .progressTitle {
+    margin-left: 40%;
+  }
+  .historyList {
+    margin-left: 10%;
   }
 }
 

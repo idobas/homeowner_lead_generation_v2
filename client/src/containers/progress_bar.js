@@ -6,7 +6,7 @@ import './progress_bar.css';
 function ProgressBar({ progress }) {
     return (
         <div className='progressBar'>
-            <span>Your progress:</span>
+            <span className='progressTitle'>Your progress:</span>
             <LinearProgress variant="determinate" value={progress}/>
         </div>
     )

@@ -42,7 +42,7 @@ export function addressChanged(address, isInMaps) {
 export function getZestimate(address) {
     const addressDetails = address.split(', ');
     address = encodeURI(addressDetails[0]);
-    const cityStateZip = encodeURI(addressDetails[1] + addressDetails[2]);
+    const cityStateZip = encodeURI(addressDetails[1] + ' ' + addressDetails[2]);
     const API_KEY = 'X1-ZWz1gl9e707ll7_2t4xn';
     const url = `api/zestimate?API_KEY=${API_KEY}&address=${address}&cityStateZip=${cityStateZip}`;
     const request = fetch(url).then(result  => result.text());
