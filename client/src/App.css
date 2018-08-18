@@ -30,11 +30,11 @@
   .progressBar {
     width: 100%;
     left: 0;
-    bottom: 15px;
     position: relative;
+    margin-top: -85px;
   }
   .progressTitle {
-    margin-left: 40%;
+    display: none;
   }
   .historyList {
     margin-left: 10%;
