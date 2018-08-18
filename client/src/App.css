@@ -67,8 +67,8 @@
   .addressesScreen {
     text-align: center;
   }
-  .addressInput {
-    width: 95%;
+  .input-container {
+    width: 90%;
   }
 }
 
