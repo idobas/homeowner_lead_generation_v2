@@ -16,7 +16,7 @@ class WelcomeScreen extends Component {
 
     render() {
         return (
-            <div>
+            <div className='welcomeScreen'>
                 <p className='welcomeScreenTitle'>Please provide the following details to start the journey to your new home:</p>
                 <WelcomeScreenForm className='welcomeScreenForm'/>
             </div>

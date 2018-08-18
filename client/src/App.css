@@ -45,14 +45,20 @@
     height: 50px;
   }
   .welcomeScreenTitle {
-    padding-right: 127px;
+    /* padding-right: 127px; */
     text-align: center;
-    padding-left: 77px;
+    /* padding-left: 77px; */
   }
   .welcomeScreenForm {
     text-align: center;
     margin-left: 0;
     margin-top: 12px;
+  }
+  .submitButton {
+    margin-top: 20px;
+  }
+  .welcomeScreen {
+    padding-right: 30px;
   }
 }
 
