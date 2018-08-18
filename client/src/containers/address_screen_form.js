@@ -18,7 +18,7 @@ class AddressScreenForm extends Component {
     render() {
         const { handleSubmit, isAddressValid} = this.props;
         return (
-            <form className="welcomeScreenForm" onSubmit={handleSubmit(() => this.dispatchSubmit())}>
+            <form className="addressesScreen" onSubmit={handleSubmit(() => this.dispatchSubmit())}>
                 <div className="addressInput">
                     <Field name="address" component={LocationSearchInput} props={{text: 'Address'}} type="text"/>
                 </div>

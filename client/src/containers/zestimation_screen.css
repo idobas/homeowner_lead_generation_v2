@@ -4,13 +4,11 @@
 }
 
 .zestimate h2 {
-    margin-left: 38%;
+    margin-left: 150px;
 }
 
 .zestimate .back {
     margin-left: 50px;
-    position: absolute;
-    top: 636px;
     text-decoration: none;
 }
 

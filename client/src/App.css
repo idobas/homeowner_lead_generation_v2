@@ -25,19 +25,22 @@
 @media(max-width: 768px) {
   .history {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
   }
   .progressBar {
     width: 100%;
     left: 0;
     position: relative;
-    margin-top: -60px;
   }
   .progressTitle {
     display: none;
   }
   .historyList {
-    margin-left: 10%;
+    margin-left: 20%;
+    margin-bottom: 160px;
+  }
+  .historyList ol {
+    width: 100%;
   }
   .historyList li:nth-of-type(1n+4) {
     display: none;
@@ -60,6 +63,9 @@
   }
   .welcomeScreen {
     padding-right: 30px;
+  }
+  .addressesScreen {
+    text-align: center;
   }
 }
 
