@@ -66,9 +66,10 @@
   }
   .addressesScreen {
     text-align: center;
+    margin-left: 30px;
   }
   .input-container {
-    width: 90%;
+    width: 100%;
   }
 }
 
