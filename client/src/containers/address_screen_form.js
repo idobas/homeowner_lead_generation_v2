@@ -10,8 +10,8 @@ import {withRouter} from 'react-router-dom';
 
 class AddressScreenForm extends Component {
     dispatchSubmit() {
-        const { address, getZestimate, history } = this.props;
-        getZestimate(address);
+        const { address, getZestimate, history, firstName, lastName, email, phoneNumber } = this.props;
+        getZestimate(address, firstName, lastName, email, phoneNumber);
         history.push('/zestimate');
     }
 
@@ -33,7 +33,11 @@ class AddressScreenForm extends Component {
 function mapStateToProps(state) {
     return {
         isAddressValid: state.addresses.isInMaps,
-        address: state.addresses.address
+        address: state.addresses.address,
+        firstName: state.userInfo.firstName,
+        lastName: state.userInfo.lastName,
+        email: state.userInfo.email,
+        phoneNumber: state.userInfo.phone,
     }
 }
 
